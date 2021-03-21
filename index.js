@@ -1,9 +1,12 @@
-let itemInput = document.getElementById("itemInput")
-const submitItem = document.getElementById("submitItem")
-let itemList = document.getElementById("itemList")
+// let itemInput = document.getElementById("itemInput")
+// const submitItem = document.getElementById("submitItem")
+// let itemList = document.getElementById("itemList")
+
 
 submitItem.addEventListener('click', () => {
-  itemList.textContent = itemInput.value;
+  let item = document.createElement("li")
+  item.textContent = itemInput.value
+  itemList.appendChild(item)
 });
 
 
