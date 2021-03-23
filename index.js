@@ -1,18 +1,22 @@
-//function for binding submit button to event listener 
-submitItem.addEventListener('click', () => {
-  //container for creating list item 
-  let item = document.createElement("li")
-  //assign the input value to list value 
-  item.textContent = itemInput.value
-  //add item(node) to parent(ul) node 
-  itemList.appendChild(item)
-  //clear input 
+let list = []
+
+submit.addEventListener("click", () => {
+
+  let newItem = document.createElement("li")
+  let item = document.getElementById("input").value 
+
+  newItem.textContent = item
+  itemList.appendChild(newItem)
+
+  list.push(item)
+  console.log(list)
+
   return clearInput()
 });
 
-//function for clearing input 
+
 let clearInput = () => {
-  itemInput.value = "";
+  input.value = "";
 }
 
 
