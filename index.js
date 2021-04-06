@@ -1,4 +1,6 @@
-let list = []
+let todoList = {
+  todos: []
+}
 
 submit.addEventListener("click", () => {
 
@@ -8,9 +10,9 @@ submit.addEventListener("click", () => {
   newItem.textContent = item
   itemList.appendChild(newItem)
 
-  list.push(item)
-  console.log(list)
-
+  //adding new item to array
+  todoList.todos.push(item)
+  console.log(todoList)
 
   return clearInput()
 })
