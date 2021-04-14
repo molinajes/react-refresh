@@ -2,21 +2,34 @@ let todoList = {
   todos: []
 }
 
+
 submit.addEventListener("click", () => {
 
-  let newItem = document.createElement("li")
-  let item = document.getElementById("input").value 
+  //create checkbox element 
+  let checkbox = document.createElement("input")
+  checkbox.type= "checkbox"
+  checkbox.id = "complete"
 
-  newItem.textContent = item
-  itemList.appendChild(newItem)
+  //create label element 
+  let item = document.getElementById("input").value
+  let label = document.createElement("label")
+  label.htmlFor = "complete"
 
-  //adding new item to array
+  //append text node to label 
+  label.appendChild(document.createTextNode(item))
+
+  //append checkbox and label to ul element
+  itemList.appendChild(checkbox)
+  itemList.appendChild(label)
+
+  //add new item to array list
   todoList.todos.push(item)
+
   console.log(todoList)
 
-  return clearInput()
+  //clear input field
+  clearInput()
 })
-
 
 let clearInput = () => {
   input.value = "";
