@@ -7,12 +7,11 @@ submit.addEventListener("click", () => {
   //create checkbox element 
   let checkbox = document.createElement("input")
   checkbox.type= "checkbox"
-  checkbox.id = "complete"
 
   //create label element 
   let item = document.getElementById("input").value
   let label = document.createElement("label")
-  label.htmlFor = "complete"
+  label.className = "complete"
 
   //create li element
   let list = document.createElement("li")
