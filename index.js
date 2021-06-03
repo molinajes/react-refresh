@@ -9,24 +9,33 @@ submit.addEventListener("click", (e) => {
     console.log("empty input")
     e.preventDefault()
   } else {
-    //create label element 
-    let item = document.getElementById("input").value
-    let label = document.createElement("label")
-    label.className = "complete"
-
-    //create checkbox element 
-    let checkbox = document.createElement("input")
-    checkbox.type = "checkbox"
 
     //create li element
     let list = document.createElement("li")
 
+    //create item element 
+    let item = document.getElementById("input").value
+
+    //create label element with complete class
+    let label = document.createElement("label")
+    label.className = "complete"
+
+    //create input element wih type checkbox 
+    let checkbox = document.createElement("input")
+    checkbox.type = "checkbox"
+
+    //create remove button
+    let remove = document.createElement("button")
+    remove.type = "button"
+    remove.innerHTML = "x"
+
     //append text node to label 
     label.appendChild(document.createTextNode(item))
 
-    //append checkbox and label to li element
+    //append checkbox, label and remove to li element
     list.appendChild(checkbox)
     list.appendChild(label)
+    list.appendChild(remove)
 
     //append li to ul
     itemList.appendChild(list)
