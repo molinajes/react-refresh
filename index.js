@@ -13,6 +13,10 @@ submit.addEventListener("click", (e) => {
     //create li element
     let list = document.createElement("li")
 
+        //Test: create container for li items
+        let listContainer = document.createElement("div")
+        listContainer.append(list)
+
     //create item element 
     let item = document.getElementById("input").value
 
@@ -47,12 +51,24 @@ submit.addEventListener("click", (e) => {
 
     //clear input field
     clearInput()
+
+    //remove item
+    remove.addEventListener("click", removeItem)
   } 
 })
 
 let clearInput = () => {
   input.value = "";
 }
+
+//updater function to remove li item 
+function removeItem () {
+  let item = this.parentNode  
+  let parent = item.parentNode
+  parent.removeChild(item)
+}
+
+
 
 
 
