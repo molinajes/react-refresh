@@ -1,7 +1,3 @@
-let todoList = {
-  todos: []
-}
-
 submit.addEventListener("click", (e) => {
   
   //conditional to check if input is empty
@@ -28,7 +24,7 @@ submit.addEventListener("click", (e) => {
     let remove = document.createElement("button")
     remove.type = "button"
     remove.innerHTML = "x"
-    
+
     //remove item
     remove.addEventListener("click", removeItem)
 
@@ -42,11 +38,6 @@ submit.addEventListener("click", (e) => {
 
     //append li to ul
     itemList.appendChild(list)
-
-    //add new item to array list
-    todoList.todos.push(item)
-
-    console.log(todoList)
 
     //clear input field
     clearInput()
