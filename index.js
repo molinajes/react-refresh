@@ -1,5 +1,4 @@
 submit.addEventListener("click", (e) => {
-  
   //conditional to check if input is empty
   if(input.value === "" || input.value === null) {
     console.log("empty input")
@@ -45,9 +44,8 @@ submit.addEventListener("click", (e) => {
 })
 
 let clearInput = () => {
-  input.value = "";
+  input.value = ""
 }
-
 
 //updater function to remove li item 
 function removeItem () {
