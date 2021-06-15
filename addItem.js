@@ -11,11 +11,6 @@ class AddItem extends React.Component {
     if(this.state.clicked) {
       return "You clicked add."
     } 
-    // return e(
-    //   "button",
-    //   { onClick: () => this.setState({clicked: true }) }, 
-    //     "Add Item"
-    // )
     return (
       <button onClick={() => this.setState({ clicked: true })}>
         Add Item
@@ -26,3 +21,6 @@ class AddItem extends React.Component {
 
 const domContainer = document.querySelector('#addItem');
 ReactDOM.render(e(AddItem), domContainer);
+
+
+
