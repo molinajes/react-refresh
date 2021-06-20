@@ -1,25 +1,14 @@
 "use strict"
-
-const e  = React.createElement;
-
-function ReactList() {
+class ReactList extends React.Component {
+  render() {
     return (
-      <div>
-        <div>
-          <input placeholder="new item" />
-          <button>add item</button>
-        </div>
-        <div>
-          <ul>
-            <li>item 1</li>
-          </ul>
-        </div>
-      </div>
+      <div>Test</div>
     )
   }
+}
 
-const domContainer = document.querySelector('#react_itemList');
-ReactDOM.render(e(ReactList), domContainer);
+let domContainer = document.querySelector('#react_itemList');
+ReactDOM.render(<ReactList />, domContainer);
 
 
 
