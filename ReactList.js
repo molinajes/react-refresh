@@ -11,19 +11,43 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ReactList = function (_React$Component) {
   _inherits(ReactList, _React$Component);
 
-  function ReactList() {
+  function ReactList(props) {
     _classCallCheck(this, ReactList);
 
-    return _possibleConstructorReturn(this, (ReactList.__proto__ || Object.getPrototypeOf(ReactList)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ReactList.__proto__ || Object.getPrototypeOf(ReactList)).call(this, props));
+
+    _this.state = {
+      message: "Nothing to see here"
+    };
+    _this.handledClicked = _this.handledClicked.bind(_this);
+    return _this;
   }
 
   _createClass(ReactList, [{
+    key: "handledClicked",
+    value: function handledClicked() {
+      this.setState(function (prevState) {
+        return {
+          message: "Welcome to the club"
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
-        "Test"
+        React.createElement(
+          "p",
+          null,
+          this.state.message
+        ),
+        React.createElement(
+          "button",
+          { onClick: this.handledClicked },
+          "Don't Click"
+        )
       );
     }
   }]);
