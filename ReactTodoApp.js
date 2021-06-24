@@ -23,12 +23,36 @@ var ReactTodoApp = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        'App Component'
+        'App Component',
+        React.createElement(TodoList, null)
       );
     }
   }]);
 
   return ReactTodoApp;
+}(React.Component);
+
+var TodoList = function (_React$Component2) {
+  _inherits(TodoList, _React$Component2);
+
+  function TodoList() {
+    _classCallCheck(this, TodoList);
+
+    return _possibleConstructorReturn(this, (TodoList.__proto__ || Object.getPrototypeOf(TodoList)).apply(this, arguments));
+  }
+
+  _createClass(TodoList, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Todo List Component'
+      );
+    }
+  }]);
+
+  return TodoList;
 }(React.Component);
 
 var domContainer = document.querySelector('#reactTodoApp');
