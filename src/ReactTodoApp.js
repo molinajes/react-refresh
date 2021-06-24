@@ -1,5 +1,5 @@
 "use strict"
-class ReactList extends React.Component {
+class ReactTodoApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,8 +23,8 @@ class ReactList extends React.Component {
   }
 }
 
-const domContainer = document.querySelector('#react_itemList');
-ReactDOM.render(<ReactList />, domContainer);
+const domContainer = document.querySelector("#reactTodoApp");
+ReactDOM.render(<ReactTodoApp />, domContainer);
 
 
 
