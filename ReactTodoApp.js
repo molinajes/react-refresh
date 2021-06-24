@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11,43 +11,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ReactTodoApp = function (_React$Component) {
   _inherits(ReactTodoApp, _React$Component);
 
-  function ReactTodoApp(props) {
+  function ReactTodoApp() {
     _classCallCheck(this, ReactTodoApp);
 
-    var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, props));
-
-    _this.state = {
-      message: "Nothing to see here"
-    };
-    _this.handledClicked = _this.handledClicked.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).apply(this, arguments));
   }
 
   _createClass(ReactTodoApp, [{
-    key: "handledClicked",
-    value: function handledClicked() {
-      this.setState(function (prevState) {
-        return {
-          message: "Welcome to the club"
-        };
-      });
-    }
-  }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
-        React.createElement(
-          "p",
-          null,
-          this.state.message
-        ),
-        React.createElement(
-          "button",
-          { onClick: this.handledClicked },
-          "Don't Click"
-        )
+        'App Component'
       );
     }
   }]);
@@ -55,5 +31,5 @@ var ReactTodoApp = function (_React$Component) {
   return ReactTodoApp;
 }(React.Component);
 
-var domContainer = document.querySelector("#reactTodoApp");
+var domContainer = document.querySelector('#reactTodoApp');
 ReactDOM.render(React.createElement(ReactTodoApp, null), domContainer);

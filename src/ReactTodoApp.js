@@ -1,30 +1,13 @@
-"use strict"
-class ReactTodoApp extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: "Nothing to see here"
-    }
-    this.handledClicked = this.handledClicked.bind(this)
-  }
+'use strict';
 
-  handledClicked() {
-    this.setState((prevState) => ({
-      message: "Welcome to the club"
-    }))
-  }
+class ReactTodoApp extends React.Component {
   render() {
     return (
-      <div>
-        <p>{this.state.message}</p>
-        <button onClick={this.handledClicked}>Don't Click</button>
-      </div>
+      <div>App Component</div>
     )
   }
 }
 
-const domContainer = document.querySelector("#reactTodoApp");
+let domContainer = document.querySelector('#reactTodoApp');
 ReactDOM.render(<ReactTodoApp />, domContainer);
-
-
 
