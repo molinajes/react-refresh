@@ -18,13 +18,14 @@ var ReactTodoApp = function (_React$Component) {
   }
 
   _createClass(ReactTodoApp, [{
-    key: 'render',
+    key: "render",
     value: function render() {
+      var item = "walk dog";
       return React.createElement(
-        'div',
+        "div",
         null,
-        'App Component',
-        React.createElement(TodoList, null)
+        "App Component(parent)",
+        React.createElement(TodoList, { item: "walk dog" })
       );
     }
   }]);
@@ -42,12 +43,21 @@ var TodoList = function (_React$Component2) {
   }
 
   _createClass(TodoList, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
-        'Todo List Component'
+        "Todo List Component(child)",
+        React.createElement(
+          "ul",
+          null,
+          React.createElement(
+            "li",
+            null,
+            this.props.item
+          )
+        )
       );
     }
   }]);

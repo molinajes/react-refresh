@@ -2,10 +2,11 @@
 
 class ReactTodoApp extends React.Component {
   render() {
+    const item = "walk dog"
     return (
       <div>
-      App Component
-       <TodoList />
+      App Component(parent)
+       <TodoList item={"walk dog"} />
       </div>
      
     )
@@ -15,7 +16,12 @@ class ReactTodoApp extends React.Component {
 class TodoList extends React.Component {
   render() {
     return (
-      <div>Todo List Component</div>
+      <div>
+      Todo List Component(child)
+        <ul>
+          <li>{this.props.item}</li>
+        </ul>
+      </div>
     )
   }
 }
