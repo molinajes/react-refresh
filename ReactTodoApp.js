@@ -24,7 +24,16 @@ var ReactTodoApp = function (_React$Component) {
       return React.createElement(
         "div",
         null,
-        "App Component(parent)",
+        React.createElement(
+          "form",
+          null,
+          React.createElement(
+            "label",
+            null,
+            React.createElement("input", { type: "text" })
+          ),
+          React.createElement("input", { type: "submit", value: "add item" })
+        ),
         React.createElement(TodoList, { item: "walk dog" })
       );
     }
@@ -48,7 +57,6 @@ var TodoList = function (_React$Component2) {
       return React.createElement(
         "div",
         null,
-        "Todo List Component(child)",
         React.createElement(
           "ul",
           null,
