@@ -6,6 +6,12 @@ class ReactTodoApp extends React.Component {
     this.state = {
       item: "walk dog"
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    alert("you clicked submit")
   }
 
   render() {
@@ -15,7 +21,7 @@ class ReactTodoApp extends React.Component {
           <label>
             <input type="text" />
           </label>
-          <input type="submit" value="add item"/>
+          <input onClick={this.handleClick} type="submit" value="add item"/>
         </form>
       <TodoList item={this.state.item} />
       </div>

@@ -19,10 +19,17 @@ var ReactTodoApp = function (_React$Component) {
     _this.state = {
       item: "walk dog"
     };
+
+    _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
   _createClass(ReactTodoApp, [{
+    key: "handleClick",
+    value: function handleClick() {
+      alert("you clicked submit");
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
@@ -36,7 +43,7 @@ var ReactTodoApp = function (_React$Component) {
             null,
             React.createElement("input", { type: "text" })
           ),
-          React.createElement("input", { type: "submit", value: "add item" })
+          React.createElement("input", { onClick: this.handleClick, type: "submit", value: "add item" })
         ),
         React.createElement(TodoList, { item: this.state.item })
       );
