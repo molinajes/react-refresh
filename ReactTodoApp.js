@@ -11,16 +11,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ReactTodoApp = function (_React$Component) {
   _inherits(ReactTodoApp, _React$Component);
 
-  function ReactTodoApp() {
+  function ReactTodoApp(prop) {
     _classCallCheck(this, ReactTodoApp);
 
-    return _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, prop));
+
+    _this.state = {
+      item: "walk dog"
+    };
+    return _this;
   }
 
   _createClass(ReactTodoApp, [{
     key: "render",
     value: function render() {
-      var item = "walk dog";
       return React.createElement(
         "div",
         null,
@@ -34,7 +38,7 @@ var ReactTodoApp = function (_React$Component) {
           ),
           React.createElement("input", { type: "submit", value: "add item" })
         ),
-        React.createElement(TodoList, { item: "walk dog" })
+        React.createElement(TodoList, { item: this.state.item })
       );
     }
   }]);

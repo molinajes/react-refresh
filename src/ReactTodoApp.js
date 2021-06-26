@@ -1,8 +1,14 @@
 'use strict';
 
 class ReactTodoApp extends React.Component {
+  constructor(prop) {
+    super(prop)
+    this.state = {
+      item: "walk dog"
+    }
+  }
+
   render() {
-    const item = "walk dog"
     return (
       <div>
         <form>
@@ -11,7 +17,7 @@ class ReactTodoApp extends React.Component {
           </label>
           <input type="submit" value="add item"/>
         </form>
-      <TodoList item={"walk dog"} />
+      <TodoList item={this.state.item} />
       </div>
     )
   }
