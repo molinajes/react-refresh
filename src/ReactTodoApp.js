@@ -4,26 +4,32 @@ class ReactTodoApp extends React.Component {
   constructor(prop) {
     super(prop)
     this.state = {
-      item: "walk dog"
+      value: ""
     }
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleClick(){
-    alert("you clicked submit")
+  handleChange(event) {
+    this.setState({value: event.target.value})
+  }
+
+  handleSubmit(event){
+    alert("this item was just added: " + this.state.value)
+    event.preventDefault()
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" />
+            <input onChange={this.handleChange} type="text" value={this.state.value} />
           </label>
-          <input onClick={this.handleClick} type="submit" value="add item"/>
+          <input type="submit" value="add item"/>
         </form>
-      <TodoList item={this.state.item} />
+      <TodoList value={this.state.value} />
       </div>
     )
   }
@@ -34,7 +40,7 @@ class TodoList extends React.Component {
     return (
       <div>
         <ul>
-          <li>{this.props.item}</li>
+          <li>{this.props.value}</li>
         </ul>
       </div>
     )

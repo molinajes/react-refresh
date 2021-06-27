@@ -17,17 +17,24 @@ var ReactTodoApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, prop));
 
     _this.state = {
-      item: "walk dog"
+      value: ""
     };
 
-    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
 
   _createClass(ReactTodoApp, [{
-    key: "handleClick",
-    value: function handleClick() {
-      alert("you clicked submit");
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({ value: event.target.value });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      alert("this item was just added: " + this.state.value);
+      event.preventDefault();
     }
   }, {
     key: "render",
@@ -37,15 +44,15 @@ var ReactTodoApp = function (_React$Component) {
         null,
         React.createElement(
           "form",
-          null,
+          { onSubmit: this.handleSubmit },
           React.createElement(
             "label",
             null,
-            React.createElement("input", { type: "text" })
+            React.createElement("input", { onChange: this.handleChange, type: "text", value: this.state.value })
           ),
-          React.createElement("input", { onClick: this.handleClick, type: "submit", value: "add item" })
+          React.createElement("input", { type: "submit", value: "add item" })
         ),
-        React.createElement(TodoList, { item: this.state.item })
+        React.createElement(TodoList, { value: this.state.value })
       );
     }
   }]);
@@ -74,7 +81,7 @@ var TodoList = function (_React$Component2) {
           React.createElement(
             "li",
             null,
-            this.props.item
+            this.props.value
           )
         )
       );
