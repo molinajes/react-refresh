@@ -39,7 +39,12 @@ var ReactTodoApp = function (_React$Component) {
       if (!this.state.value) {
         return event.preventDefault();
       }
-      alert("this item was just added: " + this.state.value);
+      //declare object to store 
+      var newTask = {
+        value: this.state.value,
+        id: 1 + Math.random()
+        //check input value
+      };alert(newTask.value);
     }
   }, {
     key: "render",
