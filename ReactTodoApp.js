@@ -17,7 +17,9 @@ var ReactTodoApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, prop));
 
     _this.state = {
-      value: ""
+      value: "",
+      //container for new task 
+      tasks: []
     };
 
     _this.handleChange = _this.handleChange.bind(_this);
@@ -33,8 +35,11 @@ var ReactTodoApp = function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
+      //condition for empty empty 
+      if (!this.state.value) {
+        return event.preventDefault();
+      }
       alert("this item was just added: " + this.state.value);
-      event.preventDefault();
     }
   }, {
     key: "render",

@@ -4,7 +4,9 @@ class ReactTodoApp extends React.Component {
   constructor(prop) {
     super(prop)
     this.state = {
-      value: ""
+      value: "",
+      //container for new task 
+      tasks: []
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -16,8 +18,11 @@ class ReactTodoApp extends React.Component {
   }
 
   handleSubmit(event){
+    //condition for empty empty 
+    if(!this.state.value) {
+      return event.preventDefault()
+    } 
     alert("this item was just added: " + this.state.value)
-    event.preventDefault()
   }
 
   render() {
