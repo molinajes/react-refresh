@@ -11,14 +11,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ReactTodoApp = function (_React$Component) {
   _inherits(ReactTodoApp, _React$Component);
 
-  function ReactTodoApp(prop) {
+  function ReactTodoApp(props) {
     _classCallCheck(this, ReactTodoApp);
 
-    var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, prop));
+    var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, props));
 
     _this.state = {
-      value: "",
       //container for new task 
+      input: "",
       tasks: []
     };
 
@@ -30,21 +30,27 @@ var ReactTodoApp = function (_React$Component) {
   _createClass(ReactTodoApp, [{
     key: "handleChange",
     value: function handleChange(event) {
-      this.setState({ value: event.target.value });
+      this.setState({ input: event.target.value });
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
+      event.preventDefault();
       //condition for empty empty 
-      if (!this.state.value) {
-        return event.preventDefault();
+      if (!this.state.input) {
+        return;
       }
       //declare object to store 
       var newTask = {
-        value: this.state.value,
+        input: this.state.input,
         id: 1 + Math.random()
-        //check input value
-      };alert(newTask.value);
+        //request update to current tasks state
+      };this.setState(function (state) {
+        return {
+          tasks: state.tasks.concat(newTask),
+          input: ""
+        };
+      });
     }
   }, {
     key: "render",
@@ -58,11 +64,11 @@ var ReactTodoApp = function (_React$Component) {
           React.createElement(
             "label",
             null,
-            React.createElement("input", { onChange: this.handleChange, type: "text", value: this.state.value })
+            React.createElement("input", { onChange: this.handleChange, type: "text", value: this.state.input, placeholder: "new item" })
           ),
           React.createElement("input", { type: "submit", value: "add item" })
         ),
-        React.createElement(TodoList, { value: this.state.value })
+        React.createElement(TodoList, { tasks: this.state.tasks })
       );
     }
   }]);
@@ -88,11 +94,13 @@ var TodoList = function (_React$Component2) {
         React.createElement(
           "ul",
           null,
-          React.createElement(
-            "li",
-            null,
-            this.props.value
-          )
+          this.props.tasks.map(function (task) {
+            return React.createElement(
+              "li",
+              { key: task.id },
+              task.input
+            );
+          })
         )
       );
     }

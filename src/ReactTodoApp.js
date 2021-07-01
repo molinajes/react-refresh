@@ -1,11 +1,11 @@
 'use strict';
 
 class ReactTodoApp extends React.Component {
-  constructor(prop) {
-    super(prop)
+  constructor(props) {
+    super(props)
     this.state = {
-      value: "",
       //container for new task 
+      input: "", 
       tasks: []
     }
 
@@ -14,21 +14,25 @@ class ReactTodoApp extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({input: event.target.value})
   }
 
-  handleSubmit(event){
+  handleSubmit(event){  
+    event.preventDefault()
     //condition for empty empty 
-    if(!this.state.value) {
-      return event.preventDefault()
+    if(!this.state.input) {
+      return
     } 
     //declare object to store 
     const newTask = {
-      value: this.state.value,
+      input: this.state.input,
       id: 1 + Math.random()
     }
-    //check input value
-    alert(newTask.value)
+    //request update to current tasks state
+    this.setState(state => ({
+        tasks: state.tasks.concat(newTask),
+        input: ""
+    }))
   }
 
   render() {
@@ -36,11 +40,11 @@ class ReactTodoApp extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input onChange={this.handleChange} type="text" value={this.state.value} />
+            <input onChange={this.handleChange} type="text" value={this.state.input} placeholder="new item" />
           </label>
           <input type="submit" value="add item"/>
         </form>
-      <TodoList value={this.state.value} />
+      <TodoList tasks={this.state.tasks} />
       </div>
     )
   }
@@ -51,7 +55,9 @@ class TodoList extends React.Component {
     return (
       <div>
         <ul>
-          <li>{this.props.value}</li>
+         {this.props.tasks.map((task) => (
+           <li key={task.id}>{task.input}</li>
+         ))}
         </ul>
       </div>
     )
