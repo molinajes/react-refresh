@@ -44,7 +44,10 @@ class ReactTodoApp extends React.Component {
           </label>
           <input type="submit" value="add item"/>
         </form>
-      <TodoList tasks={this.state.tasks} />
+        <TodoList 
+          tasks={this.state.tasks} 
+          onComplete={this.handleComplete}
+        />
       </div>
     )
   }
@@ -56,7 +59,10 @@ class TodoList extends React.Component {
       <div>
         <ul>
          {this.props.tasks.map((task) => (
-           <li key={task.id}>{task.input}</li>
+            <li key={task.id}>
+              <input type="checkbox" />
+             <label className="complete">{task.input}</label>
+            </li>
          ))}
         </ul>
       </div>

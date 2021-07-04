@@ -68,7 +68,10 @@ var ReactTodoApp = function (_React$Component) {
           ),
           React.createElement("input", { type: "submit", value: "add item" })
         ),
-        React.createElement(TodoList, { tasks: this.state.tasks })
+        React.createElement(TodoList, {
+          tasks: this.state.tasks,
+          onComplete: this.handleComplete
+        })
       );
     }
   }]);
@@ -98,7 +101,12 @@ var TodoList = function (_React$Component2) {
             return React.createElement(
               "li",
               { key: task.id },
-              task.input
+              React.createElement("input", { type: "checkbox" }),
+              React.createElement(
+                "label",
+                { className: "complete" },
+                task.input
+              )
             );
           })
         )
