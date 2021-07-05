@@ -11,6 +11,7 @@ class ReactTodoApp extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRemove = this.handleRemove.bind(this)
   }
 
   handleChange(event) {
@@ -35,6 +36,11 @@ class ReactTodoApp extends React.Component {
     }))
   }
 
+  //updater function to remove task 
+  handleRemove(){
+    alert("remove button clicked")
+  }
+
   render() {
     return (
       <div>
@@ -44,10 +50,7 @@ class ReactTodoApp extends React.Component {
           </label>
           <input type="submit" value="add item"/>
         </form>
-        <TodoList 
-          tasks={this.state.tasks} 
-          onComplete={this.handleComplete}
-        />
+        <TodoList tasks={this.state.tasks} handleRemove={this.handleRemove}/>
       </div>
     )
   }
@@ -61,10 +64,12 @@ class TodoList extends React.Component {
          {this.props.tasks.map((task) => (
             <li key={task.id}>
               <input type="checkbox" />
-             <label className="complete">{task.input}</label>
+              <label className="complete">{task.input}</label>
+              <button onClick={this.props.handleRemove}>x</button>
             </li>
          ))}
         </ul>
+       
       </div>
     )
   }

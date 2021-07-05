@@ -24,6 +24,7 @@ var ReactTodoApp = function (_React$Component) {
 
     _this.handleChange = _this.handleChange.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleRemove = _this.handleRemove.bind(_this);
     return _this;
   }
 
@@ -52,6 +53,14 @@ var ReactTodoApp = function (_React$Component) {
         };
       });
     }
+
+    //updater function to remove task 
+
+  }, {
+    key: "handleRemove",
+    value: function handleRemove() {
+      alert("remove button clicked");
+    }
   }, {
     key: "render",
     value: function render() {
@@ -68,10 +77,7 @@ var ReactTodoApp = function (_React$Component) {
           ),
           React.createElement("input", { type: "submit", value: "add item" })
         ),
-        React.createElement(TodoList, {
-          tasks: this.state.tasks,
-          onComplete: this.handleComplete
-        })
+        React.createElement(TodoList, { tasks: this.state.tasks, handleRemove: this.handleRemove })
       );
     }
   }]);
@@ -91,6 +97,8 @@ var TodoList = function (_React$Component2) {
   _createClass(TodoList, [{
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return React.createElement(
         "div",
         null,
@@ -106,6 +114,11 @@ var TodoList = function (_React$Component2) {
                 "label",
                 { className: "complete" },
                 task.input
+              ),
+              React.createElement(
+                "button",
+                { onClick: _this3.props.handleRemove },
+                "x"
               )
             );
           })
