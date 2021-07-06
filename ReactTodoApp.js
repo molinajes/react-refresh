@@ -21,7 +21,6 @@ var ReactTodoApp = function (_React$Component) {
       input: "",
       tasks: []
     };
-
     _this.handleChange = _this.handleChange.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.handleRemove = _this.handleRemove.bind(_this);
@@ -45,8 +44,9 @@ var ReactTodoApp = function (_React$Component) {
       var newTask = {
         input: this.state.input,
         id: 1 + Math.random()
-        //request update to current tasks state
-      };this.setState(function (state) {
+      };
+      //request update to current tasks state
+      this.setState(function (state) {
         return {
           tasks: state.tasks.concat(newTask),
           input: ""
@@ -58,8 +58,13 @@ var ReactTodoApp = function (_React$Component) {
 
   }, {
     key: "handleRemove",
-    value: function handleRemove() {
-      alert("remove button clicked");
+    value: function handleRemove(props) {
+      //create new task list 
+      var newTasksList = this.state.tasks;
+      //remove selected item from new task list
+      newTasksList.splice(props, 1);
+      //update state for tasks 
+      this.setState({ tasks: newTasksList });
     }
   }, {
     key: "render",
@@ -73,7 +78,7 @@ var ReactTodoApp = function (_React$Component) {
           React.createElement(
             "label",
             null,
-            React.createElement("input", { onChange: this.handleChange, type: "text", value: this.state.input, placeholder: "new item" })
+            React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange })
           ),
           React.createElement("input", { type: "submit", value: "add item" })
         ),
