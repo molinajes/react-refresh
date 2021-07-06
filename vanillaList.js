@@ -1,30 +1,29 @@
-submit.addEventListener("click", (e) => {
+submit.addEventListener("click", (event) => {
   //conditional to check if input is empty
   if(input.value === "" || input.value === null) {
-    console.log("empty input")
-    e.preventDefault()
+    event.preventDefault()
   } else {
 
     //create li element
-    let list = document.createElement("li")
+    const list = document.createElement("li")
 
     //create item element 
-    let item = document.getElementById("input").value
+    const item = document.getElementById("input").value
 
     //create label element with complete class
-    let label = document.createElement("label")
+    const label = document.createElement("label")
     label.className = "complete"
 
     //create input element wih type checkbox 
-    let checkbox = document.createElement("input")
+    const checkbox = document.createElement("input")
     checkbox.type = "checkbox"
 
     //create remove button
-    let remove = document.createElement("button")
+    const remove = document.createElement("button")
     remove.type = "button"
     remove.innerHTML = "x"
 
-    //remove item
+    //declare remove event listener
     remove.addEventListener("click", removeItem)
 
     //append text node to label 
@@ -43,16 +42,24 @@ submit.addEventListener("click", (e) => {
   } 
 })
 
-let clearInput = () => {
+const clearInput = () => {
   input.value = ""
 }
 
 //updater function to remove li item 
 function removeItem () {
-  let item = this.parentNode  
-  let parent = item.parentNode
+  const item = this.parentNode  
+  const parent = item.parentNode
   parent.removeChild(item)
 }
+
+//submit item with Enter keypress event
+const item = document.getElementById("input")
+item.addEventListener("keypress", function onEvent(event) {
+  if(event.key === "Enter") {
+    document.getElementById("submit").click()
+  }
+})
 
 
 
