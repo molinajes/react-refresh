@@ -1,5 +1,4 @@
 'use strict';
-
 class ReactTodoApp extends React.Component {
   constructor(props) {
     super(props)
@@ -68,7 +67,7 @@ class TodoList extends React.Component {
          {this.props.tasks.map((task) => (
             <li key={task.id}>
               <input type="checkbox" />
-              <label className="complete">{task.input}</label>
+              <label>{task.input}</label>
               <button onClick={this.props.handleRemove}>x</button>
             </li>
          ))}

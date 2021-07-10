@@ -1,12 +1,24 @@
-* {
-  background: lightcyan;
-}
 
+
+
+/* app layout */
+
+/* app components */
 li {
   list-style-type: none;
 }
 
-input[type=checkbox]:checked + label.complete {
+input[type=checkbox]:checked+label.complete {
   text-decoration: line-through;
+}
+
+/* vanilla components */
+.todo-vanilla {
+  background-color: #fd6853;
+}
+
+/* react components */
+.todo-react {
+  background: #fdf053;
 }
 

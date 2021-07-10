@@ -117,7 +117,7 @@ var TodoList = function (_React$Component2) {
               React.createElement("input", { type: "checkbox" }),
               React.createElement(
                 "label",
-                { className: "complete" },
+                null,
                 task.input
               ),
               React.createElement(
