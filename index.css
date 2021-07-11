@@ -2,6 +2,11 @@
 
 
 /* app layout */
+html {
+  min-height: 100%;
+  background: #fec485;
+
+}
 
 /* app components */
 li {
@@ -14,11 +19,11 @@ input[type=checkbox]:checked+label.complete {
 
 /* vanilla components */
 .todo-vanilla {
-  background-color: #fd6853;
+  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
 /* react components */
 .todo-react {
-  background: #fdf053;
+  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
