@@ -1,14 +1,9 @@
-
-
-
-/* app layout */
+/* global styling */
 html {
   min-height: 100%;
   background: #fec485;
-
 }
 
-/* app components */
 li {
   list-style-type: none;
 }
@@ -17,13 +12,26 @@ input[type=checkbox]:checked+label.complete {
   text-decoration: line-through;
 }
 
-/* vanilla components */
+/* todo container */
+.todo-container {
+  display: flex;
+}
+
+/* vanilla container */
 .todo-vanilla {
+  flex-basis: 50%;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
-/* react components */
+/* react container */
 .todo-react {
+  flex-basis: 50%;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 

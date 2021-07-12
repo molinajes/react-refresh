@@ -73,6 +73,11 @@ var ReactTodoApp = function (_React$Component) {
         "div",
         null,
         React.createElement(
+          "h1",
+          null,
+          "React Todo"
+        ),
+        React.createElement(
           "form",
           { onSubmit: this.handleSubmit },
           React.createElement(

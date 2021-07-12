@@ -47,6 +47,7 @@ class ReactTodoApp extends React.Component {
   render() {
     return (
       <div>
+        <h1>React Todo</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
             <input type="text" value={this.state.input} placeholder="new item" onChange={this.handleChange} />
