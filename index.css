@@ -2,15 +2,21 @@
 html {
   min-height: 100%;
   background: #fec485;
+  font-family:Arial, sans-serif; 
+}
+
+h1 {
+   font-family: Helvetica, sans-serif;
+}
+
+input[type=checkbox]:checked+label.complete {
+  text-decoration: line-through;
 }
 
 li {
   list-style-type: none;
 }
 
-input[type=checkbox]:checked+label.complete {
-  text-decoration: line-through;
-}
 
 /* todo container */
 .todo-container {
