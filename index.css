@@ -3,20 +3,28 @@ html {
   min-height: 100%;
   background: #fec485;
   font-family:Arial, sans-serif; 
+  
 }
 
 h1 {
    font-family: Helvetica, sans-serif;
+   color: #2e5b8c;
 }
 
 input[type=checkbox]:checked+label.complete {
   text-decoration: line-through;
 }
 
-li {
-  list-style-type: none;
+input {
+  background: #fdbe79;
+  border: none;
+  color: #407fc4;
 }
 
+li {
+  list-style-type: none;
+  color: #2e5b8c;
+}
 
 /* todo container */
 .todo-container {
