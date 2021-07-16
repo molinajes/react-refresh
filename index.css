@@ -21,6 +21,14 @@ input {
   color: #407fc4;
 }
 
+button {
+  background: #fd7866;
+  border: none;
+  border-radius: 5px;
+  border-bottom: .25em solid #fd6853;
+  color: #456d98;
+}
+
 li {
   list-style-type: none;
   color: #2e5b8c;
