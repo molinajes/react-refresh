@@ -34,6 +34,10 @@ li {
   color: #2e5b8c;
 }
 
+.complete {
+  padding: 0 5px
+}
+
 /* todo container */
 .todo-container {
   display: flex;
