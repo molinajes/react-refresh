@@ -49,10 +49,8 @@ class ReactTodoApp extends React.Component {
       <div>
         <h1>React Todo</h1>
         <form onSubmit={this.handleSubmit}>
-          <label>
             <input type="text" value={this.state.input} placeholder="new item" onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="add item"/>
+          <button type="submit">add item</button>
         </form>
         <TodoList tasks={this.state.tasks} handleRemove={this.handleRemove}/>
       </div>

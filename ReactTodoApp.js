@@ -80,12 +80,12 @@ var ReactTodoApp = function (_React$Component) {
         React.createElement(
           "form",
           { onSubmit: this.handleSubmit },
+          React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange }),
           React.createElement(
-            "label",
-            null,
-            React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange })
-          ),
-          React.createElement("input", { type: "submit", value: "add item" })
+            "button",
+            { type: "submit" },
+            "add item"
+          )
         ),
         React.createElement(TodoList, { tasks: this.state.tasks, handleRemove: this.handleRemove })
       );
