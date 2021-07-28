@@ -4,49 +4,44 @@ submit.addEventListener("click", (event) => {
     event.preventDefault()
   } else {
 
-    //create li element
-    const list = document.createElement("li")
+    //create item container 
+    const item = document.createElement("div")
+    item.className ="item"
 
-    //create item element 
-    const item = document.getElementById("input").value
+    //create item text
+    const itemText = document.createElement("p")
+    itemText.className ="item-text"
 
-    //create label element with complete class
-    const label = document.createElement("label")
-    label.className = "complete"
-
-    //create input element wih type checkbox 
-    const checkbox = document.createElement("input")
-    checkbox.type = "checkbox"
+    //create text input  
+    const input = document.getElementById("input").value
 
     //create remove button
     const remove = document.createElement("button")
-    remove.type = "button"
     remove.innerHTML = "x"
+    remove.className ="remove-button"
+
+    //append text input to item text
+    itemText.appendChild(document.createTextNode(input)) 
+
+    //append item text and remove button to item
+    item.appendChild(itemText)
+    item.appendChild(remove)
+
+    //append item to list container 
+    document.querySelector(".list").appendChild(item)
 
     //declare remove event listener
     remove.addEventListener("click", removeItem)
-
-    //append text node to label 
-    label.appendChild(document.createTextNode(item))
-
-    //append checkbox, label and remove to li element
-    list.appendChild(checkbox)
-    list.appendChild(label)
-    list.appendChild(remove)
-
-    //append li to ul
-    itemList.appendChild(list)
-
+    
     //clear input field
-    clearInput()
+    clearInput = () => {
+      input.value = ""
+    }
+
   } 
 })
 
-const clearInput = () => {
-  input.value = ""
-}
-
-//updater function to remove li item 
+//updater function to remove item 
 function removeItem () {
   const item = this.parentNode  
   const parent = item.parentNode
