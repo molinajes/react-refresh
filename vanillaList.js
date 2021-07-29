@@ -13,7 +13,7 @@ submit.addEventListener("click", (event) => {
     itemText.className ="item-text"
 
     //create text input  
-    const input = document.getElementById("input").value
+    const input = document.querySelector(".add-item__input").value
 
     //create remove button
     const remove = document.createElement("button")
@@ -49,8 +49,8 @@ function removeItem () {
 }
 
 //submit item with Enter keypress event
-const item = document.getElementById("input")
-item.addEventListener("keypress", function onEvent(event) {
+const input = document.querySelector(".add-item__input")
+input.addEventListener("keypress", function onEvent(event) {
   if(event.key === "Enter") {
     document.getElementById("submit").click()
   }
