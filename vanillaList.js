@@ -1,9 +1,12 @@
+
+//create container for submit 
+const submit = document.querySelector(".submit")
+
 submit.addEventListener("click", (event) => {
   //conditional to check if input is empty
   if(input.value === "" || input.value === null) {
     event.preventDefault()
   } else {
-
     //create item container 
     const item = document.createElement("div")
     item.className ="item"
@@ -31,14 +34,13 @@ submit.addEventListener("click", (event) => {
     document.querySelector(".list").appendChild(item)
 
     //declare remove event listener
-    remove.addEventListener("click", removeItem)
-    
-    //clear input field
-    clearInput = () => {
-      input.value = ""
-    }
-
+    remove.addEventListener("click", removeItem)  
   } 
+  //clear input field - IIFE
+  const clearInput = (() => {
+    console.log("clear input")
+    input.value = ""
+  })()
 })
 
 //updater function to remove item 
@@ -52,7 +54,7 @@ function removeItem () {
 const input = document.querySelector(".add-item__input")
 input.addEventListener("keypress", function onEvent(event) {
   if(event.key === "Enter") {
-    document.getElementById("submit").click()
+    document.querySelector(".submit").click()
   }
 })
 
