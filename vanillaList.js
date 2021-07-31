@@ -4,7 +4,7 @@ const submit = document.querySelector(".submit")
 
 submit.addEventListener("click", (event) => {
   //conditional to check if input is empty
-  if(input.value === "" || input.value === null) {
+  if(inputText.value === "" || inputText.value === null) {
     event.preventDefault()
   } else {
     //create item container 
@@ -15,8 +15,12 @@ submit.addEventListener("click", (event) => {
     const itemText = document.createElement("p")
     itemText.className ="item__text"
 
+    //create input type for checkbox
+    const inputCheckbox = document.createElement("input")
+    inputCheckbox.type = "checkbox"
+
     //create text input  
-    const input = document.querySelector(".add-item__input").value
+    const inputText = document.querySelector(".add-item__input").value
 
     //create remove button
     const remove = document.createElement("button")
@@ -27,11 +31,12 @@ submit.addEventListener("click", (event) => {
     const span = document.createElement("span")
     span.className ="custom-checkbox"
 
-    //append text input to item text
-    itemText.appendChild(document.createTextNode(input)) 
+    //append inputText to item text
+    itemText.appendChild(document.createTextNode(inputText)) 
 
-    //append item text, remove button and span to item
+    //append item text, checkbox input, remove button and span to item
     item.appendChild(itemText)
+    item.appendChild(inputCheckbox)
     item.appendChild(remove)
     item.appendChild(span)
 
@@ -43,8 +48,7 @@ submit.addEventListener("click", (event) => {
   } 
   //clear input field - IIFE
   const clearInput = (() => {
-    console.log("clear input")
-    input.value = ""
+    inputText.value = ""
   })()
 })
 
@@ -56,8 +60,8 @@ function removeItem () {
 }
 
 //submit item with Enter keypress event
-const input = document.querySelector(".add-item__input")
-input.addEventListener("keypress", function onEvent(event) {
+const inputText = document.querySelector(".add-item__input")
+inputText.addEventListener("keypress", function onEvent(event) {
   if(event.key === "Enter") {
     document.querySelector(".submit").click()
   }
