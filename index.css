@@ -39,12 +39,12 @@ li {
 }
 
 /* todo container */
-.todo-container {
+.container {
   display: flex;
 }
 
 /* vanilla container */
-.todo-vanilla {
+.vanilla-container {
   flex-basis: 50%;
   margin: 10px;
   padding: 10px;

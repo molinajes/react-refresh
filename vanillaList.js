@@ -8,12 +8,12 @@ submit.addEventListener("click", (event) => {
     event.preventDefault()
   } else {
     //create item container 
-    const item = document.createElement("div")
-    item.className ="item"
+    const item = document.createElement("label")
+    item.className ="item-container"
 
     //create item text
     const itemText = document.createElement("p")
-    itemText.className ="item-text"
+    itemText.className ="item__text"
 
     //create text input  
     const input = document.querySelector(".add-item__input").value
@@ -23,15 +23,20 @@ submit.addEventListener("click", (event) => {
     remove.innerHTML = "x"
     remove.className ="remove-button"
 
+    //create span for custom checkbox
+    const span = document.createElement("span")
+    span.className ="custom-checkbox"
+
     //append text input to item text
     itemText.appendChild(document.createTextNode(input)) 
 
-    //append item text and remove button to item
+    //append item text, remove button and span to item
     item.appendChild(itemText)
     item.appendChild(remove)
+    item.appendChild(span)
 
     //append item to list container 
-    document.querySelector(".list").appendChild(item)
+    document.querySelector(".list-container").appendChild(item)
 
     //declare remove event listener
     remove.addEventListener("click", removeItem)  
