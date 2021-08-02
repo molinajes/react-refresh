@@ -2,6 +2,25 @@ html {
   min-height: 100%;
   background: #fec485;
   font-family:Arial, sans-serif; 
+  font-size: 62.5%; /* allow use to work with rem on a 10 base increment */
+}
+
+/* todo container */
+.container {
+  display: flex;
+}
+
+/* vanilla container */
+.vanilla-container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  text-align: center;
+  /* flex-basis: 50%;
+  margin: 10px;
+  padding: 10px;
+  text-align: center; */
+  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
 h1 {
@@ -9,15 +28,39 @@ h1 {
    color: #2e5b8c;
 }
 
+/* .add-item {
+
+} */
+
+.add-item__input {
+  background: #fdbe79;
+  border: none;
+  color: #407fc4;
+}
+
 /* position custom checkbox */
 .item-container {
-  display: block;
+  /* display: block;
   position: relative;
   padding-left: 45px;
   margin-bottom: 15px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 20px; */
+  display: flex; 
+  justify-content: space-between;
+  padding: 1.2rem 0;
 }
+
+.item__text {
+  color: #2e5b8c;
+  font-size: 2rem;
+  margin: 0;
+  word-break: break-all;
+}
+
+/* .remove-button {
+
+} */
 
 /* hide initial checkbox*/
 input[type=checkbox] {
@@ -26,9 +69,9 @@ input[type=checkbox] {
 
 /* custom checkbox */
 .custom-checkbox {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; modifying this will disable checkmark */
+  /* top: 0;
+  left: 0; */
   height: 17px;
   width: 19px;
   background: #fd7866;
@@ -61,12 +104,6 @@ input[type=checkbox] {
   transform: rotate(45deg);
 }
 
-.add-item__input {
-  background: #fdbe79;
-  border: none;
-  color: #407fc4;
-}
-
 button {
   background: #fd7866;
   border: none;
@@ -82,20 +119,6 @@ li {
 
 .complete {
   padding: 0 5px
-}
-
-/* todo container */
-.container {
-  display: flex;
-}
-
-/* vanilla container */
-.vanilla-container {
-  flex-basis: 50%;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
 /* react container */

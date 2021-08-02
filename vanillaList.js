@@ -34,11 +34,14 @@ submit.addEventListener("click", (event) => {
     //append inputText to item text
     itemText.appendChild(document.createTextNode(inputText)) 
 
-    //append item text, checkbox input, remove button and span to item
+    //append item text, checkbox input, remove button and span to ite
+    item.appendChild(span)
     item.appendChild(itemText)
     item.appendChild(inputCheckbox)
     item.appendChild(remove)
-    item.appendChild(span)
+   
+
+
 
     //append item to list container 
     document.querySelector(".list-container").appendChild(item)
