@@ -16,10 +16,6 @@ html {
   margin: 0 auto;
   padding: 0 1.6rem;
   text-align: center;
-  /* flex-basis: 50%;
-  margin: 10px;
-  padding: 10px;
-  text-align: center; */
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
@@ -28,9 +24,9 @@ h1 {
    color: #2e5b8c;
 }
 
-/* .add-item {
-
-} */
+.add-item {
+padding: 1.6rem 0;
+}
 
 .add-item__input {
   background: #fdbe79;
@@ -40,38 +36,38 @@ h1 {
 
 /* position custom checkbox */
 .item-container {
-  /* display: block;
+  display: flex;
   position: relative;
-  padding-left: 45px;
   margin-bottom: 15px;
   cursor: pointer;
-  font-size: 20px; */
-  display: flex; 
+  font-size: 20px;
   justify-content: space-between;
-  padding: 1.2rem 0;
+  text-align: right;
 }
 
 .item__text {
   color: #2e5b8c;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  padding-top: .5rem;
   margin: 0;
   word-break: break-all;
 }
-
-/* .remove-button {
-
-} */
 
 /* hide initial checkbox*/
 input[type=checkbox] {
   visibility: hidden;
 }
 
+/* create strikethrough for checked items */
+input[type=checkbox]:checked + p.item__text {
+  text-decoration: line-through;
+}
+
 /* custom checkbox */
 .custom-checkbox {
-  /* position: absolute; modifying this will disable checkmark */
-  /* top: 0;
-  left: 0; */
+  position: absolute; 
+  top: 0;
+  left: 0;
   height: 17px;
   width: 19px;
   background: #fd7866;
@@ -130,6 +126,3 @@ li {
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
-button {
-  margin: 5px;
-}

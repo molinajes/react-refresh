@@ -15,6 +15,7 @@ submit.addEventListener("click", (event) => {
     const itemText = document.createElement("p")
     itemText.className ="item__text"
 
+
     //create input type for checkbox
     const inputCheckbox = document.createElement("input")
     inputCheckbox.type = "checkbox"
@@ -34,14 +35,11 @@ submit.addEventListener("click", (event) => {
     //append inputText to item text
     itemText.appendChild(document.createTextNode(inputText)) 
 
-    //append item text, checkbox input, remove button and span to ite
-    item.appendChild(span)
-    item.appendChild(itemText)
+    //append checkbox input, item text, custom checkbox and remove button to item(order does matter)
     item.appendChild(inputCheckbox)
+    item.appendChild(itemText)
     item.appendChild(remove)
-   
-
-
+    item.appendChild(span)
 
     //append item to list container 
     document.querySelector(".list-container").appendChild(item)
