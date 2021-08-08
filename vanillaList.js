@@ -15,7 +15,6 @@ submit.addEventListener("click", (event) => {
     const itemText = document.createElement("p")
     itemText.className ="item__text"
 
-
     //create input type for checkbox
     const inputCheckbox = document.createElement("input")
     inputCheckbox.type = "checkbox"
