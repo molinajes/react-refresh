@@ -31,7 +31,12 @@ padding: 1.6rem 0;
 .add-item__input {
   background: #fdbe79;
   border: none;
+  margin-right: .8rem;
   color: #407fc4;
+}
+
+.submit {
+  cursor: pointer;
 }
 
 /* position custom checkbox */
@@ -43,6 +48,10 @@ padding: 1.6rem 0;
   font-size: 20px;
   justify-content: space-between;
   text-align: right;
+}
+
+.remove-button {
+  cursor: pointer;
 }
 
 .item__text {
