@@ -5,13 +5,13 @@ html {
   font-size: 62.5%; /* allow use to work with rem on a 10 base increment */
 }
 
-/* todo container */
-.container {
+/* app container */
+.app-container {
   display: flex;
 }
 
-/* vanilla container */
-.vanilla-container {
+/* todo container */
+.todo-container {
   max-width: 60rem;
   margin: 0 auto;
   padding: 0 1.6rem;
@@ -126,12 +126,4 @@ li {
   padding: 0 5px
 }
 
-/* react container */
-.todo-react {
-  flex-basis: 50%;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
-}
 

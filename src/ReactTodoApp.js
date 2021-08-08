@@ -48,13 +48,21 @@ class ReactTodoApp extends React.Component {
     return (
       <div>
         <h1>React Todo</h1>
-        <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.input} placeholder="new item" onChange={this.handleChange} />
-          <button type="submit">add item</button>
+        <form onSubmit={this.handleSubmit} className="add-item">
+            < input type = "text"
+            value = {
+              this.state.input
+            }
+            onChange = {
+              this.handleChange
+            }
+            className = "add-item__input"
+            placeholder = "new item" / >
+          <button type="submit" className="remove-button">add item</button>
         </form>
         <TodoList tasks={this.state.tasks} handleRemove={this.handleRemove}/>
       </div>
-    );
+    );  
   }
 }
 
@@ -66,7 +74,7 @@ class TodoList extends React.Component {
          {this.props.tasks.map((task) => (
             <li key={task.id}>
               <input type="checkbox" />
-              <label>{task.input}</label>
+              <label className="item__text">{task.input}</label>
               <button onClick={this.props.handleRemove}>x</button>
             </li>
          ))}

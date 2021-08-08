@@ -79,11 +79,15 @@ var ReactTodoApp = function (_React$Component) {
         ),
         React.createElement(
           "form",
-          { onSubmit: this.handleSubmit },
-          React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange }),
+          { onSubmit: this.handleSubmit, className: "add-item" },
+          React.createElement("input", { type: "text",
+            value: this.state.input,
+            onChange: this.handleChange,
+            className: "add-item__input",
+            placeholder: "new item" }),
           React.createElement(
             "button",
-            { type: "submit" },
+            { type: "submit", className: "remove-button" },
             "add item"
           )
         ),
@@ -122,7 +126,7 @@ var TodoList = function (_React$Component2) {
               React.createElement("input", { type: "checkbox" }),
               React.createElement(
                 "label",
-                null,
+                { className: "item__text" },
                 task.input
               ),
               React.createElement(
