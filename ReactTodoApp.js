@@ -21,9 +21,9 @@ var ReactTodoApp = function (_React$Component) {
       input: "",
       tasks: []
     };
-
     _this.handleChange = _this.handleChange.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleRemove = _this.handleRemove.bind(_this);
     return _this;
   }
 
@@ -44,13 +44,27 @@ var ReactTodoApp = function (_React$Component) {
       var newTask = {
         input: this.state.input,
         id: 1 + Math.random()
-        //request update to current tasks state
-      };this.setState(function (state) {
+      };
+      //request update to current tasks state
+      this.setState(function (state) {
         return {
           tasks: state.tasks.concat(newTask),
           input: ""
         };
       });
+    }
+
+    //updater function to remove task 
+
+  }, {
+    key: "handleRemove",
+    value: function handleRemove(props) {
+      //create new task list 
+      var newTasksList = this.state.tasks;
+      //remove selected item from new task list
+      newTasksList.splice(props, 1);
+      //update state for tasks 
+      this.setState({ tasks: newTasksList });
     }
   }, {
     key: "render",
@@ -59,16 +73,21 @@ var ReactTodoApp = function (_React$Component) {
         "div",
         null,
         React.createElement(
+          "h1",
+          null,
+          "React Todo"
+        ),
+        React.createElement(
           "form",
           { onSubmit: this.handleSubmit },
+          React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange }),
           React.createElement(
-            "label",
-            null,
-            React.createElement("input", { onChange: this.handleChange, type: "text", value: this.state.input, placeholder: "new item" })
-          ),
-          React.createElement("input", { type: "submit", value: "add item" })
+            "button",
+            { type: "submit" },
+            "add item"
+          )
         ),
-        React.createElement(TodoList, { tasks: this.state.tasks })
+        React.createElement(TodoList, { tasks: this.state.tasks, handleRemove: this.handleRemove })
       );
     }
   }]);
@@ -88,6 +107,8 @@ var TodoList = function (_React$Component2) {
   _createClass(TodoList, [{
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return React.createElement(
         "div",
         null,
@@ -98,7 +119,17 @@ var TodoList = function (_React$Component2) {
             return React.createElement(
               "li",
               { key: task.id },
-              task.input
+              React.createElement("input", { type: "checkbox" }),
+              React.createElement(
+                "label",
+                null,
+                task.input
+              ),
+              React.createElement(
+                "button",
+                { onClick: _this3.props.handleRemove },
+                "x"
+              )
             );
           })
         )

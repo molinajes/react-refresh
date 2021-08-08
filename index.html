@@ -7,23 +7,19 @@
     <title>Todo Refresher</title>
   </head>
   <body>
-    <!-- Basic Todo -->
-    <div>
-      <h1>Vanilla Todo</h1>
-      <div>
-        <input type="text" id="input" placeholder="new item">
-        <button id="submit">add item</button>
-      </div>  
-      <div>
-        <ul id="itemList"></div>
+    <div class="container">
+      <!-- Basic Todo -->
+       <div class="vanilla-container">
+        <h1>Vanilla Todo</h1>
+        <div class="add-item">
+          <input type="text" class="add-item__input" placeholder="new item" autofocus>
+          <button class="submit">add item</button>
+        </div>  
+        <div class="list-container"></div>
+        <script src="./vanillaList.js"></script>  
+        <!-- React Node -->
+         <!-- <div id="reactTodoApp" class="todo-react"></div> -->
       </div> 
-    </div>
-    <script src="./vanillaList.js"></script>    
-    <!-- React Todo -->
-    <div>
-      <h1>React Todo</h1>
-      <!-- DOM node for React Component -->
-      <div id="reactTodoApp"></div>
     </div>
     <!-- Load React -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>

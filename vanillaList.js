@@ -1,58 +1,71 @@
-submit.addEventListener("click", (e) => {
+
+//create container for submit 
+const submit = document.querySelector(".submit")
+
+submit.addEventListener("click", (event) => {
   //conditional to check if input is empty
-  if(input.value === "" || input.value === null) {
-    console.log("empty input")
-    e.preventDefault()
+  if(inputText.value === "" || inputText.value === null) {
+    event.preventDefault()
   } else {
+    //create item container 
+    const item = document.createElement("label")
+    item.className ="item-container"
 
-    //create li element
-    let list = document.createElement("li")
+    //create item text
+    const itemText = document.createElement("p")
+    itemText.className ="item__text"
 
-    //create item element 
-    let item = document.getElementById("input").value
+    //create input type for checkbox
+    const inputCheckbox = document.createElement("input")
+    inputCheckbox.type = "checkbox"
 
-    //create label element with complete class
-    let label = document.createElement("label")
-    label.className = "complete"
-
-    //create input element wih type checkbox 
-    let checkbox = document.createElement("input")
-    checkbox.type = "checkbox"
+    //create text input  
+    const inputText = document.querySelector(".add-item__input").value
 
     //create remove button
-    let remove = document.createElement("button")
-    remove.type = "button"
+    const remove = document.createElement("button")
     remove.innerHTML = "x"
+    remove.className ="remove-button"
 
-    //remove item
-    remove.addEventListener("click", removeItem)
+    //create span for custom checkbox
+    const span = document.createElement("span")
+    span.className ="custom-checkbox"
 
-    //append text node to label 
-    label.appendChild(document.createTextNode(item))
+    //append inputText to item text
+    itemText.appendChild(document.createTextNode(inputText)) 
 
-    //append checkbox, label and remove to li element
-    list.appendChild(checkbox)
-    list.appendChild(label)
-    list.appendChild(remove)
+    //append checkbox input, item text, custom checkbox and remove button to item(order does matter)
+    item.appendChild(inputCheckbox)
+    item.appendChild(itemText)
+    item.appendChild(remove)
+    item.appendChild(span)
 
-    //append li to ul
-    itemList.appendChild(list)
+    //append item to list container 
+    document.querySelector(".list-container").appendChild(item)
 
-    //clear input field
-    clearInput()
+    //declare remove event listener
+    remove.addEventListener("click", removeItem)  
   } 
+  //clear input field - IIFE
+  const clearInput = (() => {
+    inputText.value = ""
+  })()
 })
 
-let clearInput = () => {
-  input.value = ""
-}
-
-//updater function to remove li item 
+//updater function to remove item 
 function removeItem () {
-  let item = this.parentNode  
-  let parent = item.parentNode
+  const item = this.parentNode  
+  const parent = item.parentNode
   parent.removeChild(item)
 }
+
+//submit item with Enter keypress event
+const inputText = document.querySelector(".add-item__input")
+inputText.addEventListener("keypress", function onEvent(event) {
+  if(event.key === "Enter") {
+    document.querySelector(".submit").click()
+  }
+})
 
 
 
