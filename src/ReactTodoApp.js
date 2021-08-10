@@ -49,36 +49,26 @@ class ReactTodoApp extends React.Component {
       <div>
         <h1>React Todo</h1>
         <form onSubmit={this.handleSubmit} className="add-item">
-            < input type = "text"
-            value = {
-              this.state.input
-            }
-            onChange = {
-              this.handleChange
-            }
-            className = "add-item__input"
-            placeholder = "new item" / >
-          <button type="submit" className="remove-button">add item</button>
+        <input type="text" value={ this.state.input} onChange={this.handleChange} className="add-item__input" placeholder="new item" />
+        <button type="submit" className="remove-button">add item</button>
         </form>
         <TodoList tasks={this.state.tasks} handleRemove={this.handleRemove}/>
       </div>
     );  
   }
 }
-
 class TodoList extends React.Component {
   render() {
     return (
-      <div>
-        <ul>
-         {this.props.tasks.map((task) => (
-            <li key={task.id}>
-              <input type="checkbox" />
-              <label className="item__text">{task.input}</label>
-              <button onClick={this.props.handleRemove}>x</button>
-            </li>
-         ))}
-        </ul>
+      <div className="list-container">
+        {this.props.tasks.map((task) => (
+          <label keys={task.id} className="item-container">
+            <input type="checkbox" />
+            <p className="item__text">{task.input}</p>
+            <button onClick={this.props.handleRemove} className="remove-button">x</button>
+            <span className="custom-checkbox" />
+          </label>
+        ))}
       </div>
     );
   }

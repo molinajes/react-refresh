@@ -80,11 +80,7 @@ var ReactTodoApp = function (_React$Component) {
         React.createElement(
           "form",
           { onSubmit: this.handleSubmit, className: "add-item" },
-          React.createElement("input", { type: "text",
-            value: this.state.input,
-            onChange: this.handleChange,
-            className: "add-item__input",
-            placeholder: "new item" }),
+          React.createElement("input", { type: "text", value: this.state.input, onChange: this.handleChange, className: "add-item__input", placeholder: "new item" }),
           React.createElement(
             "button",
             { type: "submit", className: "remove-button" },
@@ -115,28 +111,25 @@ var TodoList = function (_React$Component2) {
 
       return React.createElement(
         "div",
-        null,
-        React.createElement(
-          "ul",
-          null,
-          this.props.tasks.map(function (task) {
-            return React.createElement(
-              "li",
-              { key: task.id },
-              React.createElement("input", { type: "checkbox" }),
-              React.createElement(
-                "label",
-                { className: "item__text" },
-                task.input
-              ),
-              React.createElement(
-                "button",
-                { onClick: _this3.props.handleRemove },
-                "x"
-              )
-            );
-          })
-        )
+        { className: "list-container" },
+        this.props.tasks.map(function (task) {
+          return React.createElement(
+            "label",
+            { keys: task.id, className: "item-container" },
+            React.createElement("input", { type: "checkbox" }),
+            React.createElement(
+              "p",
+              { className: "item__text" },
+              task.input
+            ),
+            React.createElement(
+              "button",
+              { onClick: _this3.props.handleRemove, className: "remove-button" },
+              "x"
+            ),
+            React.createElement("span", { className: "custom-checkbox" })
+          );
+        })
       );
     }
   }]);
