@@ -19,9 +19,24 @@ html {
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
 
+
+/* mobile responsive */
+@media (max-width: 720px) {
+  .app-container {
+    display: block;
+  }
+  .todo-container {
+    padding-bottom: 10px;
+  }
+  h1 {
+    padding-top: 15px;
+  }
+}
+
+
 h1 {
    font-family: Helvetica, sans-serif;
-   color: #2e5b8c;
+   color: #2e5b8c; 
 }
 
 .add-item {
