@@ -83,7 +83,7 @@ var ReactTodoApp = function (_React$Component) {
           React.createElement("input", { type: "text", value: this.state.input, onChange: this.handleChange, className: "add-item__input", placeholder: "new item" }),
           React.createElement(
             "button",
-            { type: "submit", className: "remove-button" },
+            { type: "submit", className: "submit" },
             "add item"
           )
         ),
