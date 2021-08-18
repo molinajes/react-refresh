@@ -1,11 +1,8 @@
 html {
-  min-height: 100%;
   background: #fec485;
   font-family:Arial, sans-serif; 
   font-size: 16px;
 }
-
-
 
 /* app container */
 .app-container {
@@ -14,27 +11,12 @@ html {
 
 /* todo container */
 .todo-container {
-  max-width: 60rem;
+  width: 300px;
   margin: 0 auto;
   padding: 0 1.6rem;
   text-align: center;
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
-
-
-/* mobile responsive */
-@media (max-width: 720px) {
-  .app-container {
-    display: block;
-  }
-  .todo-container {
-    padding-bottom: 10px;
-  }
-  h1 {
-    padding-top: 15px;
-  }
-}
-
 
 h1 {
    font-family: Arial, sans-serif; 
@@ -61,6 +43,7 @@ padding: 1.6rem 0;
 
 /* position custom checkbox */
 .item-container {
+  width: 300px;
   display: flex;
   position: relative;
   margin-bottom: 15px;
@@ -69,16 +52,19 @@ padding: 1.6rem 0;
   text-align: right;
 }
 
-.remove-button {
+/* .remove-button {
   cursor: pointer;
   font-size: 1rem;
-}
+  height: 24px;
+} */
 
 .item__text {
   color: #2e5b8c;
   font-size: 1rem;
   margin: 0;
-  word-break: break-all;
+  padding: 0 5px;
+  text-align: center;
+  word-break: break-word;
 }
 
 /* hide initial checkbox*/
@@ -96,7 +82,7 @@ input[type=checkbox]:checked + p.item__text {
   position: absolute; 
   top: 0;
   left: 0;
-  height: 17px;
+  height: 19.5px;
   width: 19px;
   background: #fd7866;
   border-radius: 5px;
@@ -120,7 +106,7 @@ input[type=checkbox]:checked + p.item__text {
   left:7px;
   bottom: 3px;
   width: 3px;
-  height: 9px;
+  height: 10px;
   border: solid #456d98;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
@@ -129,8 +115,11 @@ input[type=checkbox]:checked + p.item__text {
 }
 
 button {
+  cursor: pointer;
   background: #fd7866;
   border: none;
+  font-size: 1rem;
+  height: 24px;
   border-radius: 5px;
   border-bottom: .25em solid #fd6853;
   color: #456d98;
@@ -145,4 +134,17 @@ li {
   padding: 0 5px
 }
 
+/* mobile responsive */
+@media (max-width: 720px) {
+  .app-container {
+    display: block;
+  }
 
+  .todo-container {
+    padding-bottom: 10px;
+  }
+
+  h1 {
+    padding-top: 15px;
+  }
+}
