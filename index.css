@@ -1,7 +1,11 @@
 html {
-  background: #fec485;
-  font-family:Arial, sans-serif; 
   font-size: 16px;
+}
+
+body {
+  background: #fec485;
+  font-family:Arial,
+  sans-serif;
 }
 
 /* app container */
@@ -11,9 +15,10 @@ html {
 
 /* todo container */
 .todo-container {
-  width: 300px;
+  max-width: 300px;
+  min-height: 450px;
   margin: 0 auto;
-  padding: 0 1.6rem;
+  padding: 0 24px;
   text-align: center;
   background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
 }
@@ -25,7 +30,7 @@ h1 {
 }
 
 .add-item {
-padding: 1.6rem 0;
+padding: 18px 0;
 }
 
 .add-item__input {
@@ -43,20 +48,13 @@ padding: 1.6rem 0;
 
 /* position custom checkbox */
 .item-container {
-  width: 300px;
   display: flex;
   position: relative;
   margin-bottom: 15px;
   cursor: pointer; 
   justify-content: space-between;
-  text-align: right;
-}
 
-/* .remove-button {
-  cursor: pointer;
-  font-size: 1rem;
-  height: 24px;
-} */
+}
 
 .item__text {
   color: #2e5b8c;
@@ -105,7 +103,7 @@ input[type=checkbox]:checked + p.item__text {
 .item-container .custom-checkbox:after {
   left:7px;
   bottom: 3px;
-  width: 3px;
+  width: 3.5px;
   height: 10px;
   border: solid #456d98;
   border-width: 0 2px 2px 0;
@@ -141,10 +139,10 @@ li {
   }
 
   .todo-container {
-    padding-bottom: 10px;
+    padding-bottom: 10px; 
   }
 
   h1 {
-    padding-top: 15px;
+    padding-top: 25px; 
   }
 }
