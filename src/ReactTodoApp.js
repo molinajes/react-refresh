@@ -62,7 +62,7 @@ class TodoList extends React.Component {
     return (
       <div className="list-container">
         {this.props.tasks.map((task) => (
-          <label keys={task.id} className="item-container">
+          <label key={task.id} className="item-container">
             <input type="checkbox" />
             <p className="item__text">{task.input}</p>
             <button onClick={this.props.handleRemove} className="remove-button">x</button>

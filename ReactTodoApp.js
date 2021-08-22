@@ -115,7 +115,7 @@ var TodoList = function (_React$Component2) {
         this.props.tasks.map(function (task) {
           return React.createElement(
             "label",
-            { keys: task.id, className: "item-container" },
+            { key: task.id, className: "item-container" },
             React.createElement("input", { type: "checkbox" }),
             React.createElement(
               "p",
