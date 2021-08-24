@@ -4,8 +4,7 @@ html {
 
 body {
   background: #fec485;
-  font-family:Arial,
-  sans-serif;
+  font-family:Arial,sans-serif;
 }
 
 /* app container */
@@ -17,6 +16,7 @@ body {
 .todo-container {
   max-width: 300px;
   min-height: 450px;
+  height: fit-content;
   margin: 0 auto;
   padding: 0 24px;
   text-align: center;
