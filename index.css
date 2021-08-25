@@ -35,6 +35,7 @@ h1 {
 }
 
 .add-item__input {
+  max-width: 170px;
   background: #fdbe79;
   border: none;
   margin-right: 8px;
@@ -68,6 +69,10 @@ h1 {
   padding: 0 5px;
   text-align: center;
   word-break: break-word;
+}
+
+.remove-button {
+  padding: 0 6px;
 }
 
 /* hide initial checkbox*/
@@ -144,6 +149,7 @@ li {
   }
 
   .todo-container {
+    max-width: 300px;
     padding-bottom: 10px; 
   }
 
