@@ -1,9 +1,8 @@
-'use strict';
+"use strict";
 class ReactTodoApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      //container for new task 
       input: "", 
       tasks: []
     }
@@ -18,29 +17,23 @@ class ReactTodoApp extends React.Component {
 
   handleSubmit(event){  
     event.preventDefault()
-    //condition for empty empty 
     if(!this.state.input) {
       return;
     } 
-    //declare object to store 
+
     const newTask = {
       input: this.state.input,
       id: 1 + Math.random()
     };
-    //request update to current tasks state
     this.setState(state => ({
         tasks: state.tasks.concat(newTask),
         input: ""
     }));
   }
 
-  //updater function to remove task 
-  handleRemove(props){
-    //create new task list 
+  handleRemove(props) {
     const newTasksList = this.state.tasks
-    //remove selected item from new task list
     newTasksList.splice(props, 1)
-    //update state for tasks 
     this.setState({ tasks: newTasksList });
   }
 
@@ -74,6 +67,6 @@ class TodoList extends React.Component {
   }
 }
 
-let domContainer = document.querySelector('#reactTodoApp');
+let domContainer = document.querySelector("#reactTodoApp");
 ReactDOM.render(<ReactTodoApp />, domContainer);
 

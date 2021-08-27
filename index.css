@@ -4,15 +4,13 @@ html {
 
 body {
   background: #fec485;
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
 }
 
-/* app container */
 .app-container {
   display: flex;
 }
 
-/* todo container */
 .todo-container {
   max-width: 300px;
   min-height: 450px;
@@ -43,12 +41,17 @@ h1 {
   font-size: 1rem;
 }
 
-.submit {
+button {
   cursor: pointer;
+  background: #fd7866;
+  border: none;
   font-size: 1rem;
+  height: 24px;
+  border-radius: 5px;
+  border-bottom: .25em solid #fd6853;
+  color: #456d98;
 }
 
-/* position custom checkbox */
 .item-container {
   display: flex;
   max-width: 250px;
@@ -56,7 +59,6 @@ h1 {
   margin-bottom: 15px;
   margin: 0 auto;
   margin-bottom: 15px;
-  
   cursor: pointer; 
   justify-content: space-between;
   
@@ -71,21 +73,15 @@ h1 {
   word-break: break-word;
 }
 
-.remove-button {
-  padding: 0 6px;
-}
 
-/* hide initial checkbox*/
-input[type=checkbox] {
-  visibility: hidden;
-}
-
-/* create strikethrough for checked items */
 input[type=checkbox]:checked + p.item__text {
   text-decoration: line-through;
 }
 
-/* custom checkbox */
+.remove-button {
+  padding: 0 6px;
+}
+
 .custom-checkbox {
   position: absolute; 
   top: 0;
@@ -97,19 +93,16 @@ input[type=checkbox]:checked + p.item__text {
   border-bottom: .25em solid #fd6853;
 }
 
-/* checkmark to be shown */
 .custom-checkbox:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* display checkmark when checked */
 .item-container input:checked ~ .custom-checkbox:after {
   display: block;
 }
 
-/* styling checkmark */
 .item-container .custom-checkbox:after {
   left:7px;
   bottom: 3px;
@@ -122,27 +115,10 @@ input[type=checkbox]:checked + p.item__text {
   transform: rotate(45deg);
 }
 
-button {
-  cursor: pointer;
-  background: #fd7866;
-  border: none;
-  font-size: 1rem;
-  height: 24px;
-  border-radius: 5px;
-  border-bottom: .25em solid #fd6853;
-  color: #456d98;
-}
-
-li {
-  list-style-type: none;
-  color: #2e5b8c;
-}
-
 .complete {
   padding: 0 5px
 }
 
-/* mobile responsive */
 @media (max-width: 720px) {
   .app-container {
     display: block;
