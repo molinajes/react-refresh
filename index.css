@@ -1,0 +1,135 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #fec485;
+  font-family:Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+}
+
+.todo-container {
+  max-width: 300px;
+  min-height: 450px;
+  height: fit-content;
+  height: -moz-fit-content;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  background-image: radial-gradient(circle 561px at 49% 45.3%, rgba(253, 172, 83, 1) 0%, rgba(253, 104, 83, 0.37) 90.1%);
+}
+
+h1 {
+   font-family: Arial, sans-serif; 
+   color: #2e5b8c;
+   font-size: 2.5rem;  
+}
+
+.add-item {
+  padding: 18px 0;
+}
+
+.add-item__input {
+  max-width: 170px;
+  background: #fdbe79;
+  border: none;
+  margin-right: 8px;
+  color: #407fc4;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background: #fd7866;
+  border: none;
+  font-size: 1rem;
+  height: 24px;
+  border-radius: 5px;
+  border-bottom: .25em solid #fd6853;
+  color: #456d98;
+}
+
+.item-container {
+  display: flex;
+  max-width: 250px;
+  position: relative;
+  margin-bottom: 15px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  cursor: pointer; 
+  justify-content: space-between;
+  
+}
+
+.item__text {
+  color: #2e5b8c;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 5px;
+  text-align: center;
+  word-break: break-word;
+}
+
+
+input[type=checkbox]:checked + p.item__text {
+  text-decoration: line-through;
+}
+
+.remove-button {
+  padding: 0 6px;
+}
+
+.custom-checkbox {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  height: 19.5px;
+  width: 19px;
+  background: #fd7866;
+  border-radius: 5px;
+  border-bottom: .25em solid #fd6853;
+}
+
+.custom-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.item-container input:checked ~ .custom-checkbox:after {
+  display: block;
+}
+
+.item-container .custom-checkbox:after {
+  left:7px;
+  bottom: 3px;
+  width: 3.5px;
+  height: 10px;
+  border: solid #456d98;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.complete {
+  padding: 0 5px
+}
+
+@media (max-width: 720px) {
+  .app-container {
+    display: block;
+  }
+
+  .todo-container {
+    max-width: 300px;
+    padding-bottom: 10px; 
+  }
+
+  h1 {
+    padding-top: 25px; 
+  }
+}
