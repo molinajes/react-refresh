@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17,7 +17,6 @@ var ReactTodoApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ReactTodoApp.__proto__ || Object.getPrototypeOf(ReactTodoApp)).call(this, props));
 
     _this.state = {
-      //container for new task 
       input: "",
       tasks: []
     };
@@ -36,16 +35,14 @@ var ReactTodoApp = function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault();
-      //condition for empty empty 
       if (!this.state.input) {
         return;
       }
-      //declare object to store 
+
       var newTask = {
         input: this.state.input,
         id: 1 + Math.random()
       };
-      //request update to current tasks state
       this.setState(function (state) {
         return {
           tasks: state.tasks.concat(newTask),
@@ -53,17 +50,11 @@ var ReactTodoApp = function (_React$Component) {
         };
       });
     }
-
-    //updater function to remove task 
-
   }, {
     key: "handleRemove",
     value: function handleRemove(props) {
-      //create new task list 
       var newTasksList = this.state.tasks;
-      //remove selected item from new task list
       newTasksList.splice(props, 1);
-      //update state for tasks 
       this.setState({ tasks: newTasksList });
     }
   }, {
@@ -79,11 +70,11 @@ var ReactTodoApp = function (_React$Component) {
         ),
         React.createElement(
           "form",
-          { onSubmit: this.handleSubmit },
-          React.createElement("input", { type: "text", value: this.state.input, placeholder: "new item", onChange: this.handleChange }),
+          { onSubmit: this.handleSubmit, className: "add-item" },
+          React.createElement("input", { type: "text", value: this.state.input, onChange: this.handleChange, className: "add-item__input", placeholder: "new item" }),
           React.createElement(
             "button",
-            { type: "submit" },
+            { type: "submit", className: "submit" },
             "add item"
           )
         ),
@@ -111,28 +102,25 @@ var TodoList = function (_React$Component2) {
 
       return React.createElement(
         "div",
-        null,
-        React.createElement(
-          "ul",
-          null,
-          this.props.tasks.map(function (task) {
-            return React.createElement(
-              "li",
-              { key: task.id },
-              React.createElement("input", { type: "checkbox" }),
-              React.createElement(
-                "label",
-                null,
-                task.input
-              ),
-              React.createElement(
-                "button",
-                { onClick: _this3.props.handleRemove },
-                "x"
-              )
-            );
-          })
-        )
+        { className: "list-container" },
+        this.props.tasks.map(function (task) {
+          return React.createElement(
+            "label",
+            { key: task.id, className: "item-container" },
+            React.createElement("input", { type: "checkbox" }),
+            React.createElement(
+              "p",
+              { className: "item__text" },
+              task.input
+            ),
+            React.createElement(
+              "button",
+              { onClick: _this3.props.handleRemove, className: "remove-button" },
+              "x"
+            ),
+            React.createElement("span", { className: "custom-checkbox" })
+          );
+        })
       );
     }
   }]);
@@ -140,5 +128,5 @@ var TodoList = function (_React$Component2) {
   return TodoList;
 }(React.Component);
 
-var domContainer = document.querySelector('#reactTodoApp');
+var domContainer = document.querySelector("#reactTodoApp");
 ReactDOM.render(React.createElement(ReactTodoApp, null), domContainer);
