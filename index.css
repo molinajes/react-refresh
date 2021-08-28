@@ -46,6 +46,7 @@ button {
   background: #fd7866;
   border: none;
   font-size: 1rem;
+  padding: 2px 6px 2px 6px;
   height: 24px;
   border-radius: 5px;
   border-bottom: .25em solid #fd6853;
@@ -73,13 +74,12 @@ button {
   word-break: break-word;
 }
 
+input[type=checkbox] {
+  visibility: hidden;
+}
 
 input[type=checkbox]:checked + p.item__text {
   text-decoration: line-through;
-}
-
-.remove-button {
-  padding: 0 6px;
 }
 
 .custom-checkbox {
