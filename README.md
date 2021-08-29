@@ -1,5 +1,5 @@
 # Plenty Todo
-Two of the same todo application built with JavaScript and React.
+Two todo application on one page. Built with JavaScript and React.
 
 ![screen shot](public/images/screen-shot.jpg)
 
