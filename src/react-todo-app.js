@@ -58,7 +58,7 @@ class TodoList extends React.Component {
           <label key={task.id} className="item-container">
             <input type="checkbox" />
             <p className="item__text">{task.input}</p>
-            <button onClick={this.props.handleRemove} className="remove-button">x</button>
+            <button onClick={this.props.handleRemove}>x</button>
             <span className="custom-checkbox" />
           </label>
         ))}

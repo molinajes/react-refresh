@@ -115,7 +115,7 @@ var TodoList = function (_React$Component2) {
             ),
             React.createElement(
               "button",
-              { onClick: _this3.props.handleRemove, className: "remove-button" },
+              { onClick: _this3.props.handleRemove },
               "x"
             ),
             React.createElement("span", { className: "custom-checkbox" })
