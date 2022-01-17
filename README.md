@@ -4,7 +4,7 @@ Two todo application on one page. Built with JavaScript and React.
 ![screen shot](public/images/screen-shot.jpg)
 
 ## Installation
-1. Clone repo by running `git clone https://github.com/simonxcode/todo-refresher.git`
+1. Clone repo by running `git clone https://github.com/danielnikravesh/react-refresh.git`
 
 2. Install dependencies  
 `npm install` or `yarn install`
@@ -28,8 +28,6 @@ git commit -m "changes made with fooBar"
 
 4. Create a new Pull Request 
 
-## License
-This project is open source and available under the [MIT License](LICENSE). 
 
 
 
